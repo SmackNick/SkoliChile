@@ -7,7 +7,7 @@ export default function handler(req, res) {
             return;
         }
 
-        const recipient = 'your-email@example.com';
+        const recipient = 'mygigs4884@gmail.com';
         const subject = 'Nueva solicitud de demo de Convive';
         const emailContent = `
             Nombre: ${name}
