@@ -28,22 +28,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById("contactFormElement").onsubmit = function(event) {
         event.preventDefault();
-        var formData = new FormData(this);
 
-        fetch('api/send_form', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            alert("Información enviada correctamente!");
+        const form = event.target;
+        const data = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            mode: 'cors',  // Adding CORS mode
+        }).then(response => response.text())
+          .then(result => {
+            alert("Gracias! Tu mensaje ha sido enviado.");
             closeModal();
-        })
-        .catch(error => {
+          }).catch(error => {
             console.error('Error:', error);
             alert("Hubo un error al enviar la información. Por favor, inténtalo de nuevo.");
-        });
+          });
     }
 });
 
