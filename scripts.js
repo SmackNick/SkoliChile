@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     var btn = document.getElementById("contactButton");
     var heroBtn = document.getElementById("heroContactButton");
     var span = document.getElementsByClassName("close")[0];
+    var cancelBtn = document.getElementsByClassName("cancel")[0];
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
 
     btn.onclick = function() {
         modal.style.display = "block";
@@ -12,25 +17,33 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.style.display = "block";
     }
 
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
+    span.onclick = closeModal;
+    cancelBtn.onclick = closeModal;
 
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = "none";
+            closeModal();
         }
     }
 
     document.getElementById("contactFormElement").onsubmit = function(event) {
         event.preventDefault();
-        console.log({
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            message: document.getElementById("message").value
+        var formData = new FormData(this);
+
+        fetch('api/send_form', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            alert("Información enviada correctamente!");
+            closeModal();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("Hubo un error al enviar la información. Por favor, inténtalo de nuevo.");
         });
-        alert("Información enviada correctamente!");
-        modal.style.display = "none";
     }
 });
 
