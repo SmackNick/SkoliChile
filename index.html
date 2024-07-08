@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convive - Plataforma de Convivencia Escolar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Convive</h1>
+            <p>Plataforma de Convivencia Escolar</p>
+        </div>
+    </div>
+
+    <section id="intro" class="section">
+        <div class="container">
+            <div class="intro-content">
+                <h2>¿Sabías que el 56% de los estudiantes en Chile sufre actualmente de bullying?</h2>
+                <p>Fuente: OSM 2024</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solution" class="section">
+        <div class="container">
+            <h2>Nuestra Solución</h2>
+            <p>Presentamos nuestra Plataforma de Convivencia Escolar, diseñada para gestionar, rastrear y resolver eficazmente los casos de bullying, abuso y otros tipos de maltrato dentro de los establecimientos educativos.</p>
+        </div>
+    </section>
+
+    <section id="analysis" class="section">
+        <div class="container">
+            <h2>Análisis y Mejora Continua</h2>
+            <div class="diagram">
+                <div class="diagram-step" style="background-color: #00A89C;">Reportar</div>
+                <div class="diagram-step" style="background-color: #FF5722;">Investigar</div>
+                <div class="diagram-step" style="background-color: #2196F3;">Comunicar</div>
+                <div class="diagram-step" style="background-color: #673AB7;">Resolver</div>
+                <div class="diagram-step" style="background-color: #4CAF50;">Prevenir</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container features">
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Elimina el Miedo</h3>
+                <p>Fomenta que los estudiantes reporten incidentes de acoso escolar sin miedo ni estigma.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h3>Actúa a Tiempo</h3>
+                <p>Permite a los administradores actuar antes de que las situaciones escalen.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Mitiga Riesgos</h3>
+                <p>Previene incidentes graves documentando y cumpliendo con los protocolos de convivencia escolar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <button id="contactButton">Solicita una Demo</button>
+        </div>
+    </section>
+
+    <div id="contactForm" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contacta con Nosotros</h2>
+            <form id="contactFormElement">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Convive Chile</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
