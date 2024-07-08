@@ -14,6 +14,7 @@ body {
     color: white;
     text-align: center;
     position: relative;
+    z-index: 1;
 }
 
 .hero::before {
@@ -90,18 +91,19 @@ body {
 }
 
 .feature {
-    background: white;
+    background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 1em;
     width: 30%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin: 1em 0;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .feature:hover {
     transform: translateY(-3px);
+    background: linear-gradient(to bottom right, #e0e0e0, #d0d0d0);
 }
 
 .feature i {
@@ -169,7 +171,7 @@ button:hover {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     left: 0;
     top: 0;
     width: 100%;
@@ -206,11 +208,32 @@ button:hover {
 
 .modal-content input,
 .modal-content textarea {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.inline-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.field-group:last-child {
+    margin-right: 0;
+}
+
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .form-buttons {
@@ -264,5 +287,14 @@ footer {
     .diagram-step, .diagram-arrow {
         width: 90%;
         margin: 1em auto;
+    }
+
+    .inline-fields {
+        flex-direction: column;
+    }
+
+    .field-group {
+        margin-right: 0;
+        margin-bottom: 10px;
     }
 }

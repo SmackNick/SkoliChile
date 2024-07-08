@@ -38,15 +38,18 @@ document.addEventListener("DOMContentLoaded", function() {
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'
             }
-        }).then(response => response.text())
-          .then(result => {
-            alert("Gracias! Tu mensaje ha sido enviado.");
-            closeModal();
-          }).catch(error => {
+        }).then(response => {
+            if (response.ok) {
+                alert("Gracias! Tu mensaje ha sido enviado.");
+                closeModal();
+            } else {
+                alert("Hubo un error al enviar la información. Por favor, inténtalo de nuevo.");
+            }
+        }).catch(error => {
             console.error('Error:', error);
             alert("Hubo un error al enviar la información. Por favor, inténtalo de nuevo.");
-          });
-    }
+        });
+    };
 });
 
 function scrollToSection(sectionId) {
