@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     var modal = document.getElementById("contactForm");
     var btn = document.getElementById("contactButton");
+    var heroBtn = document.getElementById("heroContactButton");
     var span = document.getElementsByClassName("close")[0];
 
     btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    heroBtn.onclick = function() {
         modal.style.display = "block";
     }
 
@@ -28,3 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.style.display = "none";
     }
 });
+
+function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
