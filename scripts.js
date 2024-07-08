@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(form.action, {
             method: form.method,
             body: data,
-            mode: 'cors',  // Adding CORS mode
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
         }).then(response => response.text())
           .then(result => {
             alert("Gracias! Tu mensaje ha sido enviado.");
