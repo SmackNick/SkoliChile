@@ -6,21 +6,19 @@
     <title>Convive - Plataforma de Convivencia Escolar</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
-    <script>
-        function onSubmit(token) {
-            document.getElementById("contactFormElement").submit();
-        }
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="hero">
         <div class="hero-text">
+            <div class="hero-logo-container">
+                <img src="convive-logo.png" alt="Convive Logo" class="hero-logo">
+            </div>
             <h1>Convive</h1>
             <p>Plataforma de Convivencia Escolar</p>
             <div class="hero-buttons">
-                <button onclick="scrollToSection('intro')">Ver más</button>
-                <button id="heroContactButton">Solicita una Demo</button>
+                <button class="hero-button" onclick="scrollToSection('intro')">Ver más</button>
+                <button class="hero-button" id="heroContactButton">Solicita una Demo</button>
             </div>
         </div>
     </div>
@@ -28,13 +26,13 @@
     <section id="intro" class="section">
         <div class="container">
             <div class="intro-content">
-                <h2>¿Sabías que el 56% de los estudiantes en Chile sufre actualmente de bullying?</h2>
+                <h2>¿Sabías que el <span class="statistic">56%</span> de los estudiantes en Chile sufre actualmente de acoso escolar?</h2>
                 <p>Fuente: OSM 2024</p>
             </div>
         </div>
     </section>
 
-    <section id="solution" class="section" style="background-color: #f7f9fa; padding: 3em 0;"> <!-- 35% bigger -->
+    <section id="solution" class="section" style="background-color: #f7f9fa; padding: 5.5em 0;"> <!-- 35% bigger -->
         <div class="container">
             <h2>Nuestra Solución</h2>
             <p>Presentamos Convive, una plataforma integral de convivencia escolar diseñada para gestionar, rastrear y resolver eficazmente casos de bullying, abuso y otros tipos de maltrato dentro de los establecimientos educativos. Nuestra herramienta no solo facilita la documentación y el seguimiento de incidentes, sino que también promueve un entorno escolar seguro y respetuoso.</p>
@@ -45,33 +43,30 @@
     <section id="analysis-features" class="section" style="background-color: #e0f7fa;">
         <div class="container">
             <h2>Análisis y Mejora Continua</h2>
-            <div class="diagram">
-                <div class="diagram-step" style="background-color: #00A89C;">Reportar</div>
-                <div class="diagram-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="diagram-step" style="background-color: #FF5722;">Investigar</div>
-                <div class="diagram-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="diagram-step" style="background-color: #2196F3;">Comunicar</div>
-                <div class="diagram-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="diagram-step" style="background-color: #673AB7;">Resolver</div>
-                <div class="diagram-arrow"><i class="fas fa-arrow-right"></i></div>
-                <div class="diagram-step" style="background-color: #4CAF50;">Prevenir</div>
+            <div class="diagram-image">
+                <img src="diagram.png" alt="Diagrama de Procesos">
             </div>
         </div>
         <div class="container features">
             <div class="feature">
-                <i class="fas fa-bullhorn"></i>
+                <i class="fas fa-hand-holding-heart"></i>
                 <h3>Elimina el Miedo</h3>
-                <p>Fomenta que los estudiantes reporten incidentes de acoso escolar sin miedo ni estigma.</p>
+                <p>Fomenta que los estudiantes reporten incidentes de acoso escolar sin miedo ni estigma. Identificar rápidamente a estudiantes afectados y proporcionarles apoyo adecuado.</p>
             </div>
             <div class="feature">
                 <i class="fas fa-stopwatch"></i>
                 <h3>Actúa a Tiempo</h3>
-                <p>Permite a los administradores actuar antes de que las situaciones escalen.</p>
+                <p>Permite a los administradores actuar antes de que las situaciones escalen, ayudando a identificar tendencias, patrones y áreas problemáticas.</p>
             </div>
             <div class="feature">
                 <i class="fas fa-shield-alt"></i>
                 <h3>Mitiga Riesgos</h3>
                 <p>Previene incidentes graves documentando y cumpliendo con los protocolos de convivencia escolar.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>Reduce Costos de Gestión</h3>
+                <p>Reportar y rastrear incidentes ahora es más rápido y económico que otros métodos.</p>
             </div>
         </div>
     </section>
@@ -109,11 +104,12 @@
                 <label for="message">Mensaje:</label>
                 <textarea id="message" name="message" required></textarea>
 
-                <button class="g-recaptcha" 
-                        data-sitekey="6LeaggsqAAAAAHPapGg8DHBQCavJuD7qZNW7fwYZ" 
-                        data-callback='onSubmit' 
-                        data-action='submit'>Enviar</button>
-                <button type="button" class="cancel">Cancelar</button>
+                <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
+                <div class="form-buttons">
+                    <button type="submit">Enviar</button>
+                    <button type="button" class="cancel">Cancelar</button>
+                </div>
             </form>
         </div>
     </div>
