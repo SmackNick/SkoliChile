@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var heroBtn = document.getElementById("heroContactButton");
     var span = document.getElementsByClassName("close")[0];
     var cancelBtn = document.getElementsByClassName("cancel")[0];
+    var submitBtn = document.querySelector("button[type='submit']");
 
     function closeModal() {
         modal.style.display = "none";
@@ -27,6 +28,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     document.getElementById("contactFormElement").onsubmit = function(event) {
+        const honeypot = event.target.honeypot.value;
+        if (honeypot) {
+            // If honeypot is filled out, stop the form submission and deactivate the button
+            event.preventDefault();
+            submitBtn.disabled = true;
+            return false;
+        }
+
         event.preventDefault();
 
         const form = event.target;
