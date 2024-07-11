@@ -100,6 +100,31 @@ body {
     color: #FF5722;
 }
 
+.solution-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.solution-text {
+    flex: 1;
+    font-size: 1.2em; /* Increase font size */
+}
+
+.solution-image {
+    flex: 1;
+}
+
+.solution-image img {
+    width: 85%; /* Reduce image size by 15% */
+    height: auto;
+}
+
+.solution-button {
+    margin-top: 20px;
+}
+
 .features {
     display: flex;
     justify-content: space-between;
@@ -120,35 +145,6 @@ body {
 .feature i {
     font-size: 2em;
     margin-bottom: 0.5em;
-}
-
-.diagram {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 2em;
-}
-
-.diagram-step {
-    flex: 1;
-    padding: 1em;
-    margin: 0.5em;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-.diagram-arrow {
-    font-size: 2em;
-    margin: 0 0.5em;
-    color: #000;
-}
-
-.diagram-step:hover {
-    transform: translateY(-3px);
 }
 
 .responsive-image {
@@ -300,6 +296,14 @@ footer {
     .feature {
         width: 90%;
         margin: 1em auto;
+    }
+
+    .solution-grid {
+        flex-direction: column;
+    }
+
+    .solution-image img {
+        width: 100%;
     }
 
     .diagram-step, .diagram-arrow {
