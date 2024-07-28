@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /private/
 Allow: /
-Sitemap: https://convivechile.com/sitemap.xml
+
+Sitemap: https://skolichile.com/sitemap.xml
